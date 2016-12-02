@@ -1,7 +1,17 @@
+# GIVES CORRECT ANSWER BUT IMPLEMENTATION IS WEIRD
+# so i misinterpreted the question,
+# and thought right meant 45 degrees (ie NE)
+# and left meant -45 degrees (ie NW)
+
 import sys,re
 x = 0
 y = 0
 facing = 0 # no instruction has been set
+
+# 4 \  / 1
+#    \/
+#    /\
+# 3 /  \ 2
 
 # get instructions from input
 for line in sys.stdin:
@@ -21,13 +31,10 @@ for instruction in instructions:
     right = re.search (r'R\d', instruction)
 
     # change direction
-    #     1
-    #  4  +  2
-    #     3
     # if right
     if right:
         if (facing == 0):
-            facing = 2
+            facing = 1
         elif (facing == 1):
             facing = 2
         elif (facing == 2):
@@ -50,17 +57,19 @@ for instruction in instructions:
             facing = 3
 
     # change x-y coordinates based on direction
-    #     1
-    #  4  +  2
-    #     3
     if (facing == 1):
+        x = x + int(weight)
         y = y + int(weight)
     if (facing == 2):
         x = x + int(weight)
+        y = y - int(weight)
     if (facing == 3):
+        x = x - int(weight)
         y = y - int(weight)
     if (facing == 4):
         x = x - int(weight)
+        y = y + int(weight)
 
 # print y distance from start
-print abs(x)+abs(y)
+print abs(y)
+#print abs(x)+abs(y)
