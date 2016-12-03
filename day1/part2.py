@@ -14,7 +14,6 @@ for instruction in instructions:
     # remove space and new line
     instruction = re.sub(r'^\s',"",instruction)
     instruction = re.sub(r'\n',"",instruction)
-    # print instruction
 
     # obtain direction and weight
     direction = re.sub(r'\d',"",instruction)
@@ -22,7 +21,6 @@ for instruction in instructions:
 
     # check if right
     right = re.search (r'R\d', instruction)
-
     # change direction
     #     1
     #  4  +  2
@@ -74,5 +72,3 @@ for instruction in instructions:
             sys.exit()
         else:
             visited[coord] = 1
-
-# print y distance from start
