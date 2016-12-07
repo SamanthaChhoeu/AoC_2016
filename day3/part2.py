@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# cd /mnt/c/Users/saman/Desktop/AoC_2016/lab3
 # test... python solution.py < input.txt
 import sys,re
 first = []
