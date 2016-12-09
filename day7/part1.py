@@ -2,6 +2,7 @@
 # test... python solution.py < input.txt
 # answer in test input is 2
 
+
 # I KNOW THIS IS BAD STYLE BUT I DID IT ON THE
 # PLANE WITH NO INTERNET LOL SORRY
 
@@ -25,17 +26,20 @@ def abba(string):
     return contains
 
 for line in sys.stdin:
-
+    flag = 0
     line = re.sub(r'\s\n',"",line)
-
     # get contents of brackets
-    brackets = re.sub(r'^.*\[',"",line)# regex .*[(.*)].*
-    brackets = re.sub(r'\].*$',"",brackets)
+    brackets =  re.findall('\[.*?\]',line)
+    for bracket in brackets:
+        content = re.sub(r'\[',"",bracket)
+        content = re.sub(r'\]',"",content)
+        if abba(bracket) == 1:
+            flag = 1
     # no ABBA
     if abba(line)==0:
         count += 0;
     # ABBA in square brackets
-    elif abba(brackets) == 1:
+    elif flag == 1:
         count += 0;
     elif abba(line) == 1:
         count = count + 1;
