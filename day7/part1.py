@@ -31,7 +31,6 @@ for line in sys.stdin:
     # get contents of brackets
     brackets = re.sub(r'^.*\[',"",line)# regex .*[(.*)].*
     brackets = re.sub(r'\].*$',"",brackets)
-
     # no ABBA
     if abba(line)==0:
         count += 0;

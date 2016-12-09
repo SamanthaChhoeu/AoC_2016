@@ -53,6 +53,7 @@ for line in sys.stdin:
     #print "sector ID is "+sectorID
     #print "checksum is "+checksum
     # for each character that isnt a -
+
     for char in name:
         letter = re.match(r'[A-Za-z]', char)
         if letter:

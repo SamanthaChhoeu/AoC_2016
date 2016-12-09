@@ -9,7 +9,6 @@ flag=0 # using this because im on the plane and
        # i dont know if you can check if empty
 positions = {}
 word = []
-
 for line in sys.stdin:
     line = re.sub(r'\n',"",line)
     line = re.sub(r'\r',"",line)
