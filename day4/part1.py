@@ -19,29 +19,30 @@ def common(dict):
     char = 0
     for i in dict:
         # greater than highest
-        if dict[i]>freq:
+        if int(dict[i])>freq:
             freq = dict[i]
             char = i
-            #equal.append(char)
+            del equal[:]
+            equal.append(char)
         # equal to highest
-        elif dict[i] == freq:
+        elif int(dict[i]) == freq:
             equal.append(i)
 
     equal.sort()
-    print equal
-    #char = equal[0]
-    dict[char] = 0
+    char = equal[0]
+    del equal[:]
+    dict[char] = -1
     return char
     # once we find the most common, set dict value to 0
 
 for line in sys.stdin:
     # i = 0 to keep track of how many
     length = 0
-    print line
     count = {}
     chars = {}
     check = [] # calculated checksum
     line = re.sub(r'\n$',"",line) # remove new line
+    line = re.sub(r'\r',"",line)
     # get checksum
     checksum = re.sub(r"^.*\[","", line)
     checksum = re.sub(r"\]","", checksum)
@@ -62,10 +63,14 @@ for line in sys.stdin:
                 count[char]+=1
             else:
                 count[char]=1
-    print count
     for i in range(0,5):
         # keep calling common
         char = common(count)
         check.append(char)
-    print check
+    #word = ''.join(check)
+    checksumlist = []
+    for i in checksum:
+        checksumlist.append(i)
+    if check == checksumlist:
+        sum += int(sectorID)
 print sum
