@@ -1,28 +1,28 @@
 # AoC_2016
 solutions to Advent of Code 2016
-day 1 \**
-day 2 \**
-day 3 \**
-day 4 \**
-day 5 
-day 6 \*
-day 7 \*
-day 8
-day 9
-day 10
-day 11
-day 12
-day 13
-day 14
-day 15
-day 16
-day 17
-day 18
-day 19
-day 20
-day 21
-day 22
-day 23
-day 24
-day 25
+day 1 \**<br />
+day 2 \**<br />
+day 3 \**<br />
+day 4 \**<br />
+day 5 <br />
+day 6 \*<br />
+day 7 \*<br />
+day 8<br />
+day 9<br />
+day 10<br />
+day 11<br />
+day 12<br />
+day 13<br />
+day 14<br />
+day 15<br />
+day 16<br />
+day 17<br />
+day 18<br />
+day 19<br />
+day 20<br />
+day 21<br />
+day 22<br />
+day 23<br />
+day 24<br />
+day 25<br />
 
