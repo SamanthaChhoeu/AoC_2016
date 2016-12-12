@@ -1,9 +1,9 @@
 # AoC_2016
 solutions to Advent of Code 2016
-day 1 \**<br />
-day 2 \**<br />
-day 3 \**<br />
-day 4 \**<br />
+day 1 \*\*<br />
+day 2 \*\*<br />
+day 3 \*\*<br />
+day 4 \*\*<br />
 day 5 <br />
 day 6 \*<br />
 day 7 \*<br />
