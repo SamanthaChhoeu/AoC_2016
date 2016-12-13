@@ -94,6 +94,6 @@ for room in rooms:
             letter = chr(position)
             cipher += letter
     cipher = re.sub(r'\s',"",cipher) # remove whitespace
-    #print cipher
+    # check if cipher matches
     if cipher == "northpoleobjectstorage":
         print sectorID

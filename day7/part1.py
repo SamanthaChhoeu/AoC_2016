@@ -1,7 +1,5 @@
 #!/usr/bin/python
 # test... python solution.py < input.txt
-# answer in test input is 2
-
 
 # I KNOW THIS IS BAD STYLE BUT I DID IT ON THE
 # PLANE WITH NO INTERNET LOL SORRY
