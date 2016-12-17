@@ -18,7 +18,7 @@ def aba(string):
     for character in string:
         char.append(character)
     # find ABBA
-    for i in range(0, len(char)-3):
+    for i in range(0, len(char)-2):
         #print char[i]
         #print char[i+3]
         if char[i].isalpha() and char[i+1].isalpha() and char[i+2].isalpha():
@@ -26,7 +26,6 @@ def aba(string):
                 contains = 1
                 pattern = char[i]+char[i+1]+char[i+2]
                 patterns.append(pattern)
-    print patterns
     return contains, patterns
 
 for line in sys.stdin:
@@ -34,20 +33,28 @@ for line in sys.stdin:
     line = re.sub(r'\s\n',"",line)
     # get contents of brackets
     brackets =  re.findall('\[.*?\]',line)
-    for bracket in brackets:
-        content = re.sub(r'\[',"",bracket)
-        content = re.sub(r'\]',"",content)
-        if aba(bracket) == 1:
-            flag = 1
+
     # stuff outside brackets
-    outside = re.sub(r'\[.*\]',"",line)
-    print line
-    match, patterns = aba(line)
+    outside = re.sub(r'\[.*\]',"-",line)
+    #print line
+    match, patterns = aba(outside)
+    #print "match is", match
     # no ABA in whole string
     if match == 0:
         count += 0;
     elif match == 1:
-        if ()
-        count = count + 1
-    print count
+        #print patterns
+
+        for pattern in patterns:
+            chars=[]
+            for char in pattern:
+                chars.append(char)
+            reverse = chars[1]+chars[0]+chars[1]
+            #print "reverse",reverse
+            for bracket in brackets:
+                content = re.sub(r'\[',"",bracket)
+                content = re.sub(r'\]',"",content)
+                if reverse in bracket:
+                        count = count + 1
+    #print count
 print count

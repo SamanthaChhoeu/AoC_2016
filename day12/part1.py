@@ -25,30 +25,27 @@ while 1:
     if pc >= len(instructions): # reach end of pc
         break
     command = instructions[pc]
-    print pc,command
+    #print pc,command
     # cpy x y copies x (either an integer or the value of a register) into register y.
     if command[0] == "cpy":
         x = command[1]
         y = command[2]
         registers[y] = readx(x)
-        print registers
     # inc x increases the value of register x by one.
     elif command[0] == "inc":
         x = command[1]
         registers[x] = int(registers[x])+1
-        print registers
     # dec x decreases the value of register x by one.
     elif command[0] == "dec":
         x = command[1]
         registers[x] = int(registers[x])-1
-        print registers
     # jnz x y jumps to an instruction y away (positive means forward; negative means backward), but only if x is not zero.
     elif command[0] == "jnz":
         x = command[1]
         y = command[2]
         # x not equal 0
         if readx(x) != 0:
-            print "jump"
             pc += readx(y)
             pc -= 1
     pc += 1
+print registers
