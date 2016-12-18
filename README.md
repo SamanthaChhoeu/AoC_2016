@@ -5,13 +5,13 @@ day 2 \*\*<br />
 day 3 \*\*<br />
 day 4 \*\*<br />
 day 5 <br />
-day 6 \*<br />
+day 6 \*\*<br />
 day 7 \*<br />
 day 8<br />
 day 9<br />
 day 10<br />
 day 11<br />
-day 12<br />
+day 12 \*\*<br />
 day 13<br />
 day 14<br />
 day 15<br />
