@@ -29,13 +29,13 @@ def aba(string):
     return contains, patterns
 
 for line in sys.stdin:
+    ssl = 0
     flag = 0
     line = re.sub(r'\s\n',"",line)
     # get contents of brackets
     brackets =  re.findall('\[.*?\]',line)
-
     # stuff outside brackets
-    outside = re.sub(r'\[.*\]',"-",line)
+    outside = re.sub(r'\[[^\[]*\]',"-",line)
     #print line
     match, patterns = aba(outside)
     #print "match is", match
@@ -44,7 +44,6 @@ for line in sys.stdin:
         count += 0;
     elif match == 1:
         #print patterns
-
         for pattern in patterns:
             chars=[]
             for char in pattern:
@@ -52,9 +51,11 @@ for line in sys.stdin:
             reverse = chars[1]+chars[0]+chars[1]
             #print "reverse",reverse
             for bracket in brackets:
-                content = re.sub(r'\[',"",bracket)
-                content = re.sub(r'\]',"",content)
                 if reverse in bracket:
-                        count = count + 1
+                    # supports ssl
+                    ssl = 1
+    if ssl == 1:
+        count += 1
+
     #print count
 print count
